@@ -19,12 +19,12 @@ cdf = cn.derive_ct2(filename)
 cdf = cdf.tz_convert("CET")
 
 # Calculate kinematic surface heat flux
-cdf["Q_0"] = 1.165 * k * z_eff * (cdf["CT2"] ** (3 / 4)) * (
-        g / cdf["temperature"]) ** (1 / 2)
+cdf["Q_0"] = (
+    1.165 * k * z_eff * (cdf["CT2"] ** (3 / 4)) * (g / cdf["temperature"]) ** (1 / 2)
+)
 
 # Air density
-cdf["rho_air"] = 100 * cdf["pressure"] / (
-        r_d * cdf["temperature"])
+cdf["rho_air"] = 100 * cdf["pressure"] / (r_d * cdf["temperature"])
 # Surface sensible heat flux under free convection
 cdf["H_free"] = cdf["Q_0"] * cp * cdf["rho_air"]
 

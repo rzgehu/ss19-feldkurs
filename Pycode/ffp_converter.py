@@ -1,4 +1,5 @@
 """Converts data into FFP readable format
+Nicolas Gampierakis 2019
 
 CSV file format:
 yyyy = Year

@@ -1,3 +1,9 @@
+%% CORE_PATH_CALCULATOR
+%
+% Calculates path coordinates based on topographical data.
+%
+% Nicolas Gampierakis (2019)
+
 %% Initialisation
 clear;
 clc;

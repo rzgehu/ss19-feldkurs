@@ -13,9 +13,13 @@ import mpmath
 def kinematic_shf(dataframe, z_eff):
     k = 0.4  # von Karman constant
     g = 9.81
-    dataframe["Q_0"] = 1.165 * k * z_eff * (
-            dataframe["CT2"] ** (3 / 4)) * (
-                               g / dataframe["temperature"]) ** (1 / 2)
+    dataframe["Q_0"] = (
+        1.165
+        * k
+        * z_eff
+        * (dataframe["CT2"] ** (3 / 4))
+        * (g / dataframe["temperature"]) ** (1 / 2)
+    )
     return dataframe
 
 
@@ -26,10 +30,10 @@ def compute_fluxes(file_name, z_eff):
     # Calculate kinematic surface heat flux
     dataframe = kinematic_shf(dataframe, z_eff)
     # Air density
-    dataframe["rho_air"] = 100 * dataframe["pressure"] / (
-            r_d * dataframe["temperature"])
+    dataframe["rho_air"] = (
+        100 * dataframe["pressure"] / (r_d * dataframe["temperature"])
+    )
     # Surface sensible heat flux under free convection (little wind shear,
     # high instability)
-    dataframe["H_free"] = dataframe["Q_0"] * cp * dataframe[
-        "rho_air"]
+    dataframe["H_free"] = dataframe["Q_0"] * cp * dataframe["rho_air"]
     return dataframe

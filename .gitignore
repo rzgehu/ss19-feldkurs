@@ -104,6 +104,32 @@ venv.bak/
 .mypy_cache/
 
 # Data files
+IAO/data/
+IAO/FFP/
+IAO/gaimc/
+IAO/osm_convert/
+ffp/
 topo/
 .csv
 data/weather_data/
+data_TAWES_UIBK.csv
+HATPRO_humidity.csv
+HATPRO_temp.csv
+.docx
+innFLUX/
+
+# Misc scripts
+read_tirol_dgm.m
+jupyter.sh
+todo.md
+calc_footprint_FFP.py
+calc_footprint_FFP_climatology.py
+scratchpad.py
+reclassify_rasters.py
+NOx_results_qclass.mat
+NOx_xcov_figures.zip
+rooftop.csv
+rooftop_hungerburg.csv
+matlab.mat
+mi_grid.mat
+rasters/zips/

@@ -30,13 +30,13 @@ def progress_bar(packet_number, packet_size, total_size):
     # Track total downloaded data
     packet_progress = packet_number * packet_size
     # Use min() to avoid percentage overshoot
-    percentage_downloaded = min(packet_number * packet_size * 100 /
-                                total_size, 100)
+    percentage_downloaded = min(packet_number * packet_size * 100 / total_size, 100)
     bandwidth = int(packet_progress / (1024 * elapsed_time))
     # Using write instead of print to avoid automatic \n
-    sys.stdout.write("\rDownloading weather data ...%d%%, %d MB, %d KB/s" %
-                     (percentage_downloaded, packet_progress / (1024 * 1024),
-                      bandwidth))
+    sys.stdout.write(
+        "\rDownloading weather data ...%d%%, %d MB, %d KB/s"
+        % (percentage_downloaded, packet_progress / (1024 * 1024), bandwidth)
+    )
     # Flushes buffer to terminal to avoid lag in output
     sys.stdout.flush()
 
@@ -52,10 +52,10 @@ def download_database(server_path, client_path):
 
     # Timeout value recommended by NN/g before user loses attention
     if sys.version_info.major < 3 or sys.version_info.minor < 5:
-        raise Exception("Python 3.5 or greater is required to run the update "
-                        "package")
+        raise Exception(
+            "Python 3.5 or greater is required to run the update " "package"
+        )
     socket.setdefaulttimeout(10)
-    data = urllib.request.urlretrieve(server_path, client_path,
-                                      reporthook=progress_bar)
+    data = urllib.request.urlretrieve(server_path, client_path, reporthook=progress_bar)
     print("\nWeather database successfully downloaded.")
     return data
