@@ -27,7 +27,7 @@ Running scripts directly from the console will cause errors. Not all data and de
 
 The results of working examples are found in `Scintillometry Processing.ipynb` and `Footprint Rasters.ipynb`. The field course report and analysis is not available.
 
-Before beginning, run Manuela Lehner's `read_tirol_dgm.m` (not included) on DGM 5m data to generate topographical data for the scintillometer's path coordinates. Then, use `core_path_calculator.m` to generate path transects. These are also necessary for calibrating the scintillometer.
+Before beginning, use [DGM 5m data](https://www.data.gv.at/katalog/dataset/digitales-gelandemodell-des-landes-salzburg-5m) to generate topographical data for the scintillometer's path coordinates. Then, use `core_path_calculator.m` to generate path transects. These are also necessary for calibrating the scintillometer.
 
 
 **Scintillometer path coordinates must be accurate. Incorrectly generated topographical data leads to poor calibration and nonsense results!**
